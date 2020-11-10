@@ -12,6 +12,8 @@ class Space:
         'account': 'Account',
         'active': 'bool',
         'active_or_restricted_active': 'bool',
+        'created_by': 'int',
+        'created_on': 'datetime',
         'database': 'TenantDatabase',
         'deleted_by': 'int',
         'deleted_on': 'datetime',
@@ -30,13 +32,15 @@ class Space:
     }
 
     attribute_map = {
-        'account': 'account','active': 'active','active_or_restricted_active': 'activeOrRestrictedActive','database': 'database','deleted_by': 'deletedBy','deleted_on': 'deletedOn','id': 'id','last_modified_date': 'lastModifiedDate','name': 'name','planned_purge_date': 'plannedPurgeDate','postal_address': 'postalAddress','primary_currency': 'primaryCurrency','request_limit': 'requestLimit','restricted_active': 'restrictedActive','state': 'state','technical_contact_addresses': 'technicalContactAddresses','time_zone': 'timeZone','version': 'version',
+        'account': 'account','active': 'active','active_or_restricted_active': 'activeOrRestrictedActive','created_by': 'createdBy','created_on': 'createdOn','database': 'database','deleted_by': 'deletedBy','deleted_on': 'deletedOn','id': 'id','last_modified_date': 'lastModifiedDate','name': 'name','planned_purge_date': 'plannedPurgeDate','postal_address': 'postalAddress','primary_currency': 'primaryCurrency','request_limit': 'requestLimit','restricted_active': 'restrictedActive','state': 'state','technical_contact_addresses': 'technicalContactAddresses','time_zone': 'timeZone','version': 'version',
     }
 
     
     _account = None
     _active = None
     _active_or_restricted_active = None
+    _created_by = None
+    _created_on = None
     _database = None
     _deleted_by = None
     _deleted_on = None
@@ -59,6 +63,8 @@ class Space:
         self.account = kwargs.get('account', None)
         self.active = kwargs.get('active', None)
         self.active_or_restricted_active = kwargs.get('active_or_restricted_active', None)
+        self.created_by = kwargs.get('created_by', None)
+        self.created_on = kwargs.get('created_on', None)
         self.database = kwargs.get('database', None)
         self.deleted_by = kwargs.get('deleted_by', None)
         self.deleted_on = kwargs.get('deleted_on', None)
@@ -145,6 +151,52 @@ class Space:
         """
 
         self._active_or_restricted_active = active_or_restricted_active
+    
+    @property
+    def created_by(self):
+        """Gets the created_by of this Space.
+
+            The ID of the user who created this entity.
+
+        :return: The created_by of this Space.
+        :rtype: int
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this Space.
+
+            The ID of the user who created this entity.
+
+        :param created_by: The created_by of this Space.
+        :type: int
+        """
+
+        self._created_by = created_by
+    
+    @property
+    def created_on(self):
+        """Gets the created_on of this Space.
+
+            The date and time when this entity was created.
+
+        :return: The created_on of this Space.
+        :rtype: datetime
+        """
+        return self._created_on
+
+    @created_on.setter
+    def created_on(self, created_on):
+        """Sets the created_on of this Space.
+
+            The date and time when this entity was created.
+
+        :param created_on: The created_on of this Space.
+        :type: datetime
+        """
+
+        self._created_on = created_on
     
     @property
     def database(self):

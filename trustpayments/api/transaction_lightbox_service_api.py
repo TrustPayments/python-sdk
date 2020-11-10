@@ -6,18 +6,18 @@ import six
 
 from trustpayments.api_client import ApiClient
 
-class TransactionPaymentPageServiceApi:
+class TransactionLightboxServiceApi:
 
     def __init__(self, configuration):
         self.api_client = ApiClient(configuration=configuration)
 
-    def payment_page_url(self, space_id, id, **kwargs):
-        """Build Payment Page URL
+    def javascript_url(self, space_id, id, **kwargs):
+        """Build JavaScript URL
 
-        This operation creates the URL to which the user should be redirected to when the payment page should be used.
+        This operation creates the URL which can be used to embed the JavaScript for handling the Lightbox checkout flow.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.payment_page_url(space_id, id, async_req=True)
+        >>> thread = api.javascript_url(space_id, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -31,18 +31,18 @@ class TransactionPaymentPageServiceApi:
 
 
         if kwargs.get('async_req'):
-            return self.payment_page_url_with_http_info(space_id, id, **kwargs)
+            return self.javascript_url_with_http_info(space_id, id, **kwargs)
         else:
-            (data) = self.payment_page_url_with_http_info(space_id, id, **kwargs)
+            (data) = self.javascript_url_with_http_info(space_id, id, **kwargs)
             return data
 
-    def payment_page_url_with_http_info(self, space_id, id, **kwargs):
-        """Build Payment Page URL
+    def javascript_url_with_http_info(self, space_id, id, **kwargs):
+        """Build JavaScript URL
 
-        This operation creates the URL to which the user should be redirected to when the payment page should be used.
+        This operation creates the URL which can be used to embed the JavaScript for handling the Lightbox checkout flow.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.payment_page_url_with_http_info(space_id, id, async_req=True)
+        >>> thread = api.javascript_url_with_http_info(space_id, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -64,18 +64,18 @@ class TransactionPaymentPageServiceApi:
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method payment_page_url" % key
+                    " to method javascript_url" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'space_id' is set
         if ('space_id' not in params or
                 params['space_id'] is None):
-            raise ValueError("Missing the required parameter `space_id` when calling `payment_page_url`")
+            raise ValueError("Missing the required parameter `space_id` when calling `javascript_url`")
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `payment_page_url`")
+            raise ValueError("Missing the required parameter `id` when calling `javascript_url`")
 
         collection_formats = {}
 
@@ -101,7 +101,7 @@ class TransactionPaymentPageServiceApi:
         auth_settings = []
 
         return self.api_client.call_api(
-            '/transaction-payment-page/payment-page-url', 'GET',
+            '/transaction-lightbox/javascript-url', 'GET',
             path_params,
             query_params,
             header_params,

@@ -135,6 +135,11 @@ from .role import Role
 from .sales_channel import SalesChannel
 from .scope import Scope
 from .server_error import ServerError
+from .shopify_additional_line_item_data import ShopifyAdditionalLineItemData
+from .shopify_integration import ShopifyIntegration
+from .shopify_integration_payment_app_version import ShopifyIntegrationPaymentAppVersion
+from .shopify_integration_subscription_app_version import ShopifyIntegrationSubscriptionAppVersion
+from .shopify_transaction_state import ShopifyTransactionState
 from .space import Space
 from .space_address import SpaceAddress
 from .space_address_create import SpaceAddressCreate
@@ -151,6 +156,7 @@ from .tokenization_mode import TokenizationMode
 from .transaction import Transaction
 from .transaction_aware_entity import TransactionAwareEntity
 from .transaction_comment import TransactionComment
+from .transaction_completion_behavior import TransactionCompletionBehavior
 from .transaction_completion_mode import TransactionCompletionMode
 from .transaction_completion_request import TransactionCompletionRequest
 from .transaction_completion_state import TransactionCompletionState
@@ -200,6 +206,7 @@ from .payment_link_create import PaymentLinkCreate
 from .payment_terminal_contact_address import PaymentTerminalContactAddress
 from .refund_comment_active import RefundCommentActive
 from .refund_comment_create import RefundCommentCreate
+from .shopify_transaction import ShopifyTransaction
 from .space_create import SpaceCreate
 from .space_update import SpaceUpdate
 from .token_create import TokenCreate
