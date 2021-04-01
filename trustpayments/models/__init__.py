@@ -21,6 +21,14 @@ from .account_state import AccountState
 from .account_type import AccountType
 from .address import Address
 from .address_create import AddressCreate
+from .authenticated_card_data_create import AuthenticatedCardDataCreate
+from .card_authentication_response import CardAuthenticationResponse
+from .card_authentication_version import CardAuthenticationVersion
+from .card_cryptogram import CardCryptogram
+from .card_cryptogram_create import CardCryptogramCreate
+from .card_cryptogram_type import CardCryptogramType
+from .cardholder_authentication import CardholderAuthentication
+from .cardholder_authentication_create import CardholderAuthenticationCreate
 from .charge_attempt_environment import ChargeAttemptEnvironment
 from .charge_attempt_state import ChargeAttemptState
 from .charge_flow import ChargeFlow
@@ -95,6 +103,7 @@ from .payment_contract_type import PaymentContractType
 from .payment_information_hash import PaymentInformationHash
 from .payment_information_hash_type import PaymentInformationHashType
 from .payment_link import PaymentLink
+from .payment_link_address_handling_mode import PaymentLinkAddressHandlingMode
 from .payment_link_protection_mode import PaymentLinkProtectionMode
 from .payment_link_update import PaymentLinkUpdate
 from .payment_method import PaymentMethod
@@ -113,9 +122,11 @@ from .payment_terminal_location import PaymentTerminalLocation
 from .payment_terminal_location_state import PaymentTerminalLocationState
 from .payment_terminal_location_version import PaymentTerminalLocationVersion
 from .payment_terminal_location_version_state import PaymentTerminalLocationVersionState
+from .payment_terminal_receipt_type import PaymentTerminalReceiptType
 from .payment_terminal_state import PaymentTerminalState
 from .payment_terminal_type import PaymentTerminalType
 from .permission import Permission
+from .recurring_indicator import RecurringIndicator
 from .refund import Refund
 from .refund_comment import RefundComment
 from .refund_create import RefundCreate
@@ -148,11 +159,15 @@ from .static_value import StaticValue
 from .tax import Tax
 from .tax_create import TaxCreate
 from .tenant_database import TenantDatabase
+from .terminal_receipt_fetch_request import TerminalReceiptFetchRequest
+from .terminal_receipt_format import TerminalReceiptFormat
 from .token import Token
 from .token_version import TokenVersion
 from .token_version_state import TokenVersionState
 from .token_version_type import TokenVersionType
 from .tokenization_mode import TokenizationMode
+from .tokenized_card_data import TokenizedCardData
+from .tokenized_card_data_create import TokenizedCardDataCreate
 from .transaction import Transaction
 from .transaction_aware_entity import TransactionAwareEntity
 from .transaction_comment import TransactionComment
@@ -172,8 +187,6 @@ from .transaction_user_interface_type import TransactionUserInterfaceType
 from .transaction_void_mode import TransactionVoidMode
 from .transaction_void_state import TransactionVoidState
 from .two_factor_authentication_type import TwoFactorAuthenticationType
-from .unencrypted_card_data import UnencryptedCardData
-from .unencrypted_card_data_create import UnencryptedCardDataCreate
 from .user import User
 from .user_account_role import UserAccountRole
 from .user_space_role import UserSpaceRole
@@ -187,6 +200,7 @@ from .account_update import AccountUpdate
 from .application_user import ApplicationUser
 from .application_user_create import ApplicationUserCreate
 from .application_user_update import ApplicationUserUpdate
+from .authenticated_card_data import AuthenticatedCardData
 from .charge import Charge
 from .charge_attempt import ChargeAttempt
 from .charge_flow_level import ChargeFlowLevel
@@ -203,7 +217,6 @@ from .human_user_create import HumanUserCreate
 from .human_user_update import HumanUserUpdate
 from .payment_link_active import PaymentLinkActive
 from .payment_link_create import PaymentLinkCreate
-from .payment_terminal_contact_address import PaymentTerminalContactAddress
 from .refund_comment_active import RefundCommentActive
 from .refund_comment_create import RefundCommentCreate
 from .shopify_transaction import ShopifyTransaction

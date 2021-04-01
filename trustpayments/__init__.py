@@ -83,6 +83,14 @@ from trustpayments.models.account_state import AccountState
 from trustpayments.models.account_type import AccountType
 from trustpayments.models.address import Address
 from trustpayments.models.address_create import AddressCreate
+from trustpayments.models.authenticated_card_data_create import AuthenticatedCardDataCreate
+from trustpayments.models.card_authentication_response import CardAuthenticationResponse
+from trustpayments.models.card_authentication_version import CardAuthenticationVersion
+from trustpayments.models.card_cryptogram import CardCryptogram
+from trustpayments.models.card_cryptogram_create import CardCryptogramCreate
+from trustpayments.models.card_cryptogram_type import CardCryptogramType
+from trustpayments.models.cardholder_authentication import CardholderAuthentication
+from trustpayments.models.cardholder_authentication_create import CardholderAuthenticationCreate
 from trustpayments.models.charge_attempt_environment import ChargeAttemptEnvironment
 from trustpayments.models.charge_attempt_state import ChargeAttemptState
 from trustpayments.models.charge_flow import ChargeFlow
@@ -157,6 +165,7 @@ from trustpayments.models.payment_contract_type import PaymentContractType
 from trustpayments.models.payment_information_hash import PaymentInformationHash
 from trustpayments.models.payment_information_hash_type import PaymentInformationHashType
 from trustpayments.models.payment_link import PaymentLink
+from trustpayments.models.payment_link_address_handling_mode import PaymentLinkAddressHandlingMode
 from trustpayments.models.payment_link_protection_mode import PaymentLinkProtectionMode
 from trustpayments.models.payment_link_update import PaymentLinkUpdate
 from trustpayments.models.payment_method import PaymentMethod
@@ -175,9 +184,11 @@ from trustpayments.models.payment_terminal_location import PaymentTerminalLocati
 from trustpayments.models.payment_terminal_location_state import PaymentTerminalLocationState
 from trustpayments.models.payment_terminal_location_version import PaymentTerminalLocationVersion
 from trustpayments.models.payment_terminal_location_version_state import PaymentTerminalLocationVersionState
+from trustpayments.models.payment_terminal_receipt_type import PaymentTerminalReceiptType
 from trustpayments.models.payment_terminal_state import PaymentTerminalState
 from trustpayments.models.payment_terminal_type import PaymentTerminalType
 from trustpayments.models.permission import Permission
+from trustpayments.models.recurring_indicator import RecurringIndicator
 from trustpayments.models.refund import Refund
 from trustpayments.models.refund_comment import RefundComment
 from trustpayments.models.refund_create import RefundCreate
@@ -210,11 +221,15 @@ from trustpayments.models.static_value import StaticValue
 from trustpayments.models.tax import Tax
 from trustpayments.models.tax_create import TaxCreate
 from trustpayments.models.tenant_database import TenantDatabase
+from trustpayments.models.terminal_receipt_fetch_request import TerminalReceiptFetchRequest
+from trustpayments.models.terminal_receipt_format import TerminalReceiptFormat
 from trustpayments.models.token import Token
 from trustpayments.models.token_version import TokenVersion
 from trustpayments.models.token_version_state import TokenVersionState
 from trustpayments.models.token_version_type import TokenVersionType
 from trustpayments.models.tokenization_mode import TokenizationMode
+from trustpayments.models.tokenized_card_data import TokenizedCardData
+from trustpayments.models.tokenized_card_data_create import TokenizedCardDataCreate
 from trustpayments.models.transaction import Transaction
 from trustpayments.models.transaction_aware_entity import TransactionAwareEntity
 from trustpayments.models.transaction_comment import TransactionComment
@@ -234,8 +249,6 @@ from trustpayments.models.transaction_user_interface_type import TransactionUser
 from trustpayments.models.transaction_void_mode import TransactionVoidMode
 from trustpayments.models.transaction_void_state import TransactionVoidState
 from trustpayments.models.two_factor_authentication_type import TwoFactorAuthenticationType
-from trustpayments.models.unencrypted_card_data import UnencryptedCardData
-from trustpayments.models.unencrypted_card_data_create import UnencryptedCardDataCreate
 from trustpayments.models.user import User
 from trustpayments.models.user_account_role import UserAccountRole
 from trustpayments.models.user_space_role import UserSpaceRole
@@ -249,6 +262,7 @@ from trustpayments.models.account_update import AccountUpdate
 from trustpayments.models.application_user import ApplicationUser
 from trustpayments.models.application_user_create import ApplicationUserCreate
 from trustpayments.models.application_user_update import ApplicationUserUpdate
+from trustpayments.models.authenticated_card_data import AuthenticatedCardData
 from trustpayments.models.charge import Charge
 from trustpayments.models.charge_attempt import ChargeAttempt
 from trustpayments.models.charge_flow_level import ChargeFlowLevel
@@ -265,7 +279,6 @@ from trustpayments.models.human_user_create import HumanUserCreate
 from trustpayments.models.human_user_update import HumanUserUpdate
 from trustpayments.models.payment_link_active import PaymentLinkActive
 from trustpayments.models.payment_link_create import PaymentLinkCreate
-from trustpayments.models.payment_terminal_contact_address import PaymentTerminalContactAddress
 from trustpayments.models.refund_comment_active import RefundCommentActive
 from trustpayments.models.refund_comment_create import RefundCommentCreate
 from trustpayments.models.shopify_transaction import ShopifyTransaction
