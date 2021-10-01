@@ -116,6 +116,115 @@ class PaymentTerminalServiceApi:
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def link(self, space_id, terminal_id, serial_number, **kwargs):
+        """Link Device With Terminal
+
+        Links the device with given serial number with terminal.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.link(space_id, terminal_id, serial_number, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param int terminal_id:  (required)
+        :param str serial_number:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+
+
+        if kwargs.get('async_req'):
+            return self.link_with_http_info(space_id, terminal_id, serial_number, **kwargs)
+        else:
+            (data) = self.link_with_http_info(space_id, terminal_id, serial_number, **kwargs)
+            return data
+
+    def link_with_http_info(self, space_id, terminal_id, serial_number, **kwargs):
+        """Link Device With Terminal
+
+        Links the device with given serial number with terminal.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.link_with_http_info(space_id, terminal_id, serial_number, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param int terminal_id:  (required)
+        :param str serial_number:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['space_id', 'terminal_id', 'serial_number']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method link" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'space_id' is set
+        if ('space_id' not in params or
+                params['space_id'] is None):
+            raise ValueError("Missing the required parameter `space_id` when calling `link`")
+        # verify the required parameter 'terminal_id' is set
+        if ('terminal_id' not in params or
+                params['terminal_id'] is None):
+            raise ValueError("Missing the required parameter `terminal_id` when calling `link`")
+        # verify the required parameter 'serial_number' is set
+        if ('serial_number' not in params or
+                params['serial_number'] is None):
+            raise ValueError("Missing the required parameter `serial_number` when calling `link`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'space_id' in params:
+            query_params.append(('spaceId', params['space_id']))
+        if 'terminal_id' in params:
+            query_params.append(('terminalId', params['terminal_id']))
+        if 'serial_number' in params:
+            query_params.append(('serialNumber', params['serial_number']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/payment-terminal/link', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def read(self, space_id, id, **kwargs):
         """Read
 
@@ -327,6 +436,107 @@ class PaymentTerminalServiceApi:
             post_params=form_params,
             files=local_var_files,
             response_type='list[PaymentTerminal]',
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def unlink(self, space_id, terminal_id, **kwargs):
+        """Unlink Device With Terminal
+
+        Unlinks the device from terminal.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unlink(space_id, terminal_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param int terminal_id:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+
+
+        if kwargs.get('async_req'):
+            return self.unlink_with_http_info(space_id, terminal_id, **kwargs)
+        else:
+            (data) = self.unlink_with_http_info(space_id, terminal_id, **kwargs)
+            return data
+
+    def unlink_with_http_info(self, space_id, terminal_id, **kwargs):
+        """Unlink Device With Terminal
+
+        Unlinks the device from terminal.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unlink_with_http_info(space_id, terminal_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param int terminal_id:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['space_id', 'terminal_id']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method unlink" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'space_id' is set
+        if ('space_id' not in params or
+                params['space_id'] is None):
+            raise ValueError("Missing the required parameter `space_id` when calling `unlink`")
+        # verify the required parameter 'terminal_id' is set
+        if ('terminal_id' not in params or
+                params['terminal_id'] is None):
+            raise ValueError("Missing the required parameter `terminal_id` when calling `unlink`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'space_id' in params:
+            query_params.append(('spaceId', params['space_id']))
+        if 'terminal_id' in params:
+            query_params.append(('terminalId', params['terminal_id']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/payment-terminal/unlink', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
