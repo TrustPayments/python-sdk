@@ -443,6 +443,208 @@ class PaymentTerminalServiceApi:
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def trigger_final_balance(self, space_id, terminal_id, **kwargs):
+        """Remotely Trigger Final Balance
+
+        Remotely triggers the final balance receipt on the terminal.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.trigger_final_balance(space_id, terminal_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param int terminal_id:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+
+
+        if kwargs.get('async_req'):
+            return self.trigger_final_balance_with_http_info(space_id, terminal_id, **kwargs)
+        else:
+            (data) = self.trigger_final_balance_with_http_info(space_id, terminal_id, **kwargs)
+            return data
+
+    def trigger_final_balance_with_http_info(self, space_id, terminal_id, **kwargs):
+        """Remotely Trigger Final Balance
+
+        Remotely triggers the final balance receipt on the terminal.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.trigger_final_balance_with_http_info(space_id, terminal_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param int terminal_id:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['space_id', 'terminal_id']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method trigger_final_balance" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'space_id' is set
+        if ('space_id' not in params or
+                params['space_id'] is None):
+            raise ValueError("Missing the required parameter `space_id` when calling `trigger_final_balance`")
+        # verify the required parameter 'terminal_id' is set
+        if ('terminal_id' not in params or
+                params['terminal_id'] is None):
+            raise ValueError("Missing the required parameter `terminal_id` when calling `trigger_final_balance`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'space_id' in params:
+            query_params.append(('spaceId', params['space_id']))
+        if 'terminal_id' in params:
+            query_params.append(('terminalId', params['terminal_id']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/payment-terminal/trigger-final-balance', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def trigger_final_balance_by_identifier(self, space_id, terminal_identifier, **kwargs):
+        """Remotely Trigger Final Balance By Identifier
+
+        Remotely triggers the final balance receipt on the terminal by terminal identifier.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.trigger_final_balance_by_identifier(space_id, terminal_identifier, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param str terminal_identifier:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+
+
+        if kwargs.get('async_req'):
+            return self.trigger_final_balance_by_identifier_with_http_info(space_id, terminal_identifier, **kwargs)
+        else:
+            (data) = self.trigger_final_balance_by_identifier_with_http_info(space_id, terminal_identifier, **kwargs)
+            return data
+
+    def trigger_final_balance_by_identifier_with_http_info(self, space_id, terminal_identifier, **kwargs):
+        """Remotely Trigger Final Balance By Identifier
+
+        Remotely triggers the final balance receipt on the terminal by terminal identifier.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.trigger_final_balance_by_identifier_with_http_info(space_id, terminal_identifier, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int space_id:  (required)
+        :param str terminal_identifier:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['space_id', 'terminal_identifier']
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method trigger_final_balance_by_identifier" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'space_id' is set
+        if ('space_id' not in params or
+                params['space_id'] is None):
+            raise ValueError("Missing the required parameter `space_id` when calling `trigger_final_balance_by_identifier`")
+        # verify the required parameter 'terminal_identifier' is set
+        if ('terminal_identifier' not in params or
+                params['terminal_identifier'] is None):
+            raise ValueError("Missing the required parameter `terminal_identifier` when calling `trigger_final_balance_by_identifier`")
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'space_id' in params:
+            query_params.append(('spaceId', params['space_id']))
+        if 'terminal_identifier' in params:
+            query_params.append(('terminalIdentifier', params['terminal_identifier']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/payment-terminal/trigger-final-balance-by-identifier', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def unlink(self, space_id, terminal_id, **kwargs):
         """Unlink Device With Terminal
 
