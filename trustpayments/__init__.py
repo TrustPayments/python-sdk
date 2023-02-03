@@ -351,6 +351,7 @@ from trustpayments.models.user import User
 from trustpayments.models.user_account_role import UserAccountRole
 from trustpayments.models.user_space_role import UserSpaceRole
 from trustpayments.models.user_type import UserType
+from trustpayments.models.wallet_type import WalletType
 from trustpayments.models.webhook_identity import WebhookIdentity
 from trustpayments.models.webhook_listener import WebhookListener
 from trustpayments.models.webhook_listener_entity import WebhookListenerEntity
