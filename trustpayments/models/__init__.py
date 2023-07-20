@@ -58,10 +58,6 @@ from .customer_postal_address import CustomerPostalAddress
 from .customer_postal_address_create import CustomerPostalAddressCreate
 from .customers_presence import CustomersPresence
 from .data_collection_type import DataCollectionType
-from .database_translated_string import DatabaseTranslatedString
-from .database_translated_string_create import DatabaseTranslatedStringCreate
-from .database_translated_string_item import DatabaseTranslatedStringItem
-from .database_translated_string_item_create import DatabaseTranslatedStringItemCreate
 from .delivery_indication_decision_reason import DeliveryIndicationDecisionReason
 from .delivery_indication_state import DeliveryIndicationState
 from .document_template import DocumentTemplate

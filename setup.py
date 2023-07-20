@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 NAME = "trustpayments"
-VERSION = "3.4.0"
+VERSION = "4.0.0"
 
 REQUIRES = [
     "certifi>=2017.4.17",
